@@ -4,7 +4,7 @@ import sys
 import playsound
 import speech_recognition as sr
 import webbrowser
-
+import time
 def listen_user():
   rec = sr.Recognizer()
   
@@ -25,3 +25,9 @@ def talk(text , file):
 def contact():
     text_returned = listen_user()
     print(text_returned)
+if __name__ == "+__main__":
+  while True:
+    try:
+      contact()
+    except:
+      time.sleep(5)
